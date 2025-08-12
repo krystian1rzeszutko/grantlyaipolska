@@ -5,10 +5,8 @@ import hero from "@/assets/hero-grantfinder.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Search, Bot, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Helmet>
         <title>GrantFinder Polska – dotacje dla firm</title>
         <meta name="description" content="Wyszukuj dotacje i sprawdzaj kwalifikowalność. GrantFinder Polska dla MŚP: wyszukiwarka, quiz, chatbot, subskrypcje." />
@@ -59,12 +57,12 @@ const Index = () => {
             <article className="card-elevated">
               <Shield className="text-primary" />
               <h3>Ocena kwalifikowalności</h3>
-              <p>Quiz tak/nie dopasowujący firmę do kryteriów programu.</p>
+              <p>Pytania tak/nie dopasowujące firmę do kryteriów programu.</p>
             </article>
             <article className="card-elevated">
               <Bot className="text-primary" />
               <h3>AI Doradca</h3>
-              <p>Chatbot po polsku. Wersja Free: 5 pytań, PRO: bez limitu.</p>
+              <p>Chatbot po polsku. Wersja Free: 3 pytania, PRO: bez limitu.</p>
             </article>
           </div>
         </section>
@@ -76,7 +74,7 @@ const Index = () => {
             <div className="plan-card">
               <div>
                 <h3>Free</h3>
-                <p>3 wyszukiwania/miesiąc, 5 pytań do chatbota</p>
+                <p>1 wyszukiwanie/miesiąc, 3 pytania do chatbota</p>
               </div>
               <Button asChild variant="outline"><Link to="/auth">Załóż konto</Link></Button>
             </div>
@@ -92,8 +90,6 @@ const Index = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
