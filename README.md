@@ -1,5 +1,9 @@
 # Welcome to my Lovable project, help me if you want
 
+## About me
+
+My name is Krystian and I'm 18 years old. Through Grantly, I want to optimize Polish businesses by finding grants and funding available for their specific industry. If you'd like to join me and create something that will revolutionize Polish businesses, contact me on GitHub or by email at krystian.detailing@gmail.com.
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/05a12972-f439-49e6-8803-7da6f5e6c7be
