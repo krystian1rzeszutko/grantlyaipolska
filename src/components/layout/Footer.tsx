@@ -1,0 +1,18 @@
+const Footer = () => {
+  return (
+    <footer className="border-t">
+      <div className="container mx-auto px-4 py-8 text-sm text-muted-foreground">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p>© {new Date().getFullYear()} GrantFinder Polska</p>
+          <nav className="flex items-center gap-6">
+            <a href="#pricing" className="hover:text-foreground">Cennik</a>
+            <a href="/admin" className="hover:text-foreground">Panel Admina</a>
+            <a href="/dashboard" className="hover:text-foreground">Panel użytkownika</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

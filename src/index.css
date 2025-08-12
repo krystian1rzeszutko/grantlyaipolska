@@ -53,6 +53,13 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Added tokens */
+    --primary-glow: 222.2 47.4% 20%;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary) / 0.95), hsl(var(--sidebar-ring) / 0.9));
+    --gradient-surface: radial-gradient(1000px 400px at 10% -10%, hsl(var(--sidebar-ring) / 0.08), transparent), radial-gradient(800px 300px at 90% 0%, hsl(var(--primary) / 0.08), transparent);
+    --shadow-soft: 0 6px 24px -8px hsl(var(--ring) / 0.12);
+    --shadow-glow: 0 12px 40px -12px hsl(var(--sidebar-ring) / 0.35);
   }
 
   .dark {
@@ -91,6 +98,13 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Added tokens */
+    --primary-glow: 210 40% 96%;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--sidebar-ring) / 0.9), hsl(var(--primary) / 0.95));
+    --gradient-surface: radial-gradient(1000px 400px at 10% -10%, hsl(var(--sidebar-ring) / 0.15), transparent), radial-gradient(800px 300px at 90% 0%, hsl(var(--primary) / 0.15), transparent);
+    --shadow-soft: 0 6px 24px -8px hsl(var(--ring) / 0.25);
+    --shadow-glow: 0 12px 40px -12px hsl(var(--sidebar-ring) / 0.5);
   }
 }
 
@@ -102,4 +116,32 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  .btn-hero {
+    background-image: var(--gradient-primary);
+    @apply text-primary-foreground shadow-lg hover:opacity-95 active:opacity-90 transition-[opacity,transform] duration-300 ease-out will-change-transform;
+  }
+  .btn-premium {
+    background-image: var(--gradient-primary);
+    @apply text-primary-foreground shadow-lg hover:opacity-95 active:opacity-90 transition-[opacity,transform] duration-300 ease-out will-change-transform;
+    box-shadow: var(--shadow-glow);
+  }
+  .hero-surface { position: absolute; inset: 0; background-image: var(--gradient-surface); pointer-events: none; }
+
+  .card-elevated {
+    @apply rounded-xl border p-5 bg-card; box-shadow: var(--shadow-soft);
+    display: grid; gap: .5rem; align-content: start;
+  }
+  .card-elevated h3 { @apply text-base font-semibold; }
+
+  .plan-card {
+    @apply rounded-xl border p-6 bg-card flex items-center justify-between gap-6;
+  }
+  .plan-card.premium { box-shadow: var(--shadow-glow); }
+
+  .chat-bubble { @apply max-w-[80%] rounded-xl px-4 py-2; box-shadow: var(--shadow-soft); }
+  .chat-bubble.user { @apply ml-auto bg-secondary; }
+  .chat-bubble.ai { @apply mr-auto bg-accent; }
 }
