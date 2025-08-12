@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
           <span className="inline-block size-6 rounded-sm bg-primary" aria-hidden />
-          <span className="text-base font-semibold tracking-tight">GrantFinder Polska</span>
+          <span className="text-base font-semibold tracking-tight">Grantly Polska</span>
         </Link>
         <div className="hidden items-center gap-6 md:flex">
           <NavLink to="/grants" className="text-sm text-muted-foreground hover:text-foreground">Wyszukiwarka</NavLink>

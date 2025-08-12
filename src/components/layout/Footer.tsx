@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="border-t">
       <div className="container mx-auto px-4 py-8 text-sm text-muted-foreground">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p>© {new Date().getFullYear()} GrantFinder Polska</p>
+          <p>© {new Date().getFullYear()} Grantly Polska</p>
           <nav className="flex items-center gap-6">
             <a href="#pricing" className="hover:text-foreground">Cennik</a>
             <a href="/admin" className="hover:text-foreground">Panel Admina</a>

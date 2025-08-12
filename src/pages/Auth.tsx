@@ -56,7 +56,7 @@ const Auth = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Logowanie i rejestracja – GrantFinder Polska</title>
+        <title>Logowanie i rejestracja – Grantly Polska</title>
         <meta name="description" content="Zaloguj się lub załóż konto. Opcjonalnie wprowadź NIP, aby pobrać dane firmy." />
         <link rel="canonical" href="/auth" />
       </Helmet>

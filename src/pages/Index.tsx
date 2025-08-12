@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return <div className="min-h-screen bg-background">
       <Helmet>
-        <title>GrantFinder Polska – dotacje dla firm</title>
-        <meta name="description" content="Wyszukuj dotacje i sprawdzaj kwalifikowalność. GrantFinder Polska dla MŚP: wyszukiwarka, quiz, chatbot, subskrypcje." />
+        <title>Grantly Polska – dotacje dla firm</title>
+        <meta name="description" content="Wyszukuj dotacje i sprawdzaj kwalifikowalność. Grantly Polska dla MŚP: wyszukiwarka, quiz, chatbot, subskrypcje." />
         <link rel="canonical" href="/" />
       </Helmet>
 
@@ -22,7 +22,7 @@ const Index = () => {
           <div className="container mx-auto grid items-center gap-10 px-4 py-20 md:grid-cols-2">
             <div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-                GrantFinder Polska
+                Grantly Polska
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
                 Jedno miejsce, aby znaleźć dotacje, sprawdzić kwalifikowalność i zaplanować finansowanie rozwoju Twojej firmy.
@@ -41,7 +41,7 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <img src={hero} alt="GrantFinder Polska – hero" className="w-full rounded-lg shadow-xl" loading="lazy" />
+              <img src={hero} alt="Grantly Polska – hero" className="w-full rounded-lg shadow-xl" loading="lazy" />
             </div>
           </div>
         </section>

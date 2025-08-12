@@ -10,7 +10,7 @@ const Terms = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Regulamin – GrantFinder Polska",
+    name: "Regulamin – Grantly Polska",
     url: canonical,
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -19,14 +19,14 @@ const Terms = () => {
         { "@type": "ListItem", position: 2, name: "Regulamin", item: canonical },
       ],
     },
-    isPartOf: { "@type": "WebSite", name: "GrantFinder Polska", url: origin || "/" },
+    isPartOf: { "@type": "WebSite", name: "Grantly Polska", url: origin || "/" },
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Regulamin – GrantFinder Polska</title>
-        <meta name="description" content="Regulamin korzystania z aplikacji GrantFinder Polska: zasady, płatności, dane i odpowiedzialność." />
+        <title>Regulamin – Grantly Polska</title>
+        <meta name="description" content="Regulamin korzystania z aplikacji Grantly Polska: zasady, płatności, dane i odpowiedzialność." />
         <link rel="canonical" href={canonical} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
@@ -36,14 +36,14 @@ const Terms = () => {
       <main>
         <section className="container mx-auto px-4 py-12">
           <header className="mb-8">
-            <h1 className="text-3xl font-bold">Regulamin korzystania z aplikacji GrantFinder Polska</h1>
+            <h1 className="text-3xl font-bold">Regulamin korzystania z aplikacji Grantly Polska</h1>
             <p className="mt-2 text-muted-foreground">Ostatnia aktualizacja: {new Date().toLocaleDateString("pl-PL")}</p>
           </header>
 
           <article className="prose max-w-none dark:prose-invert">
             <section className="mb-8">
               <h2 className="text-xl font-semibold">1. Definicje</h2>
-              <p>1.1. „Aplikacja” – GrantFinder Polska, dostępna pod adresem {siteAddress}.</p>
+              <p>1.1. „Aplikacja” – Grantly Polska, dostępna pod adresem {siteAddress}.</p>
               <p>1.2. „Użytkownik” – osoba korzystająca z aplikacji.</p>
               <p>1.3. „Usługa” – funkcje dostępne w aplikacji, w tym wyszukiwarka dotacji i AI chatbot.</p>
             </section>

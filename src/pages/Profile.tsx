@@ -37,7 +37,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Profil firmy – GrantFinder Polska</title>
+        <title>Profil firmy – Grantly Polska</title>
         <meta name="description" content="Uzupełnij dane firmy: NIP, PKD, region, zatrudnienie, obrót, data rozpoczęcia." />
         <link rel="canonical" href="/profile" />
       </Helmet>

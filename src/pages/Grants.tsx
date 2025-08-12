@@ -58,7 +58,7 @@ const Grants = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Wyszukiwarka dotacji – GrantFinder Polska</title>
+        <title>Wyszukiwarka dotacji – Grantly Polska</title>
         <meta name="description" content="Filtruj dotacje po PKD, regionie, typie wsparcia, kwocie i terminie naboru." />
         <link rel="canonical" href="/grants" />
       </Helmet>

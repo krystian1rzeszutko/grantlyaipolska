@@ -6,7 +6,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <meta name="author" content="GrantFinder Polska" />
+        <meta name="author" content="Grantly Polska" />
       </Helmet>
       <Navbar />
       <main>{children}</main>

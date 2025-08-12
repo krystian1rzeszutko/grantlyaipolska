@@ -26,7 +26,7 @@ const Eligibility = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Ocena kwalifikowalności – GrantFinder Polska</title>
+        <title>Ocena kwalifikowalności – Grantly Polska</title>
         <meta name="description" content="Quiz tak/nie porównujący dane firmy z kryteriami programu i wskazujący braki." />
         <link rel="canonical" href="/eligibility" />
       </Helmet>

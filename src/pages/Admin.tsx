@@ -42,7 +42,7 @@ const Admin = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Panel administratora – GrantFinder Polska</title>
+        <title>Panel administratora – Grantly Polska</title>
         <meta name="description" content="Dodawanie i edycja dotacji, podgląd użytkowników, zarządzanie płatnościami." />
         <link rel="canonical" href="/admin" />
       </Helmet>

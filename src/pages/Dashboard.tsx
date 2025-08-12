@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Panel użytkownika – GrantFinder Polska</title>
+        <title>Panel użytkownika – Grantly Polska</title>
         <meta name="description" content="Historia wyszukiwań, status subskrypcji i edycja profilu." />
         <link rel="canonical" href="/dashboard" />
       </Helmet>

@@ -35,7 +35,7 @@ const Chatbot = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>AI Doradca – GrantFinder Polska</title>
+        <title>AI Doradca – Grantly Polska</title>
         <meta name="description" content="Chatbot po polsku wspiera w wyszukiwaniu dotacji i interpretacji kryteriów." />
         <link rel="canonical" href="/chatbot" />
       </Helmet>

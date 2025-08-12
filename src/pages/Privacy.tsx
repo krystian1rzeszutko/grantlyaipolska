@@ -9,7 +9,7 @@ const Privacy = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Polityka prywatności – GrantFinder Polska",
+    name: "Polityka prywatności – Grantly Polska",
     url: canonical,
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -18,14 +18,14 @@ const Privacy = () => {
         { "@type": "ListItem", position: 2, name: "Polityka prywatności", item: canonical },
       ],
     },
-    isPartOf: { "@type": "WebSite", name: "GrantFinder Polska", url: origin || "/" },
+    isPartOf: { "@type": "WebSite", name: "Grantly Polska", url: origin || "/" },
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Polityka prywatności – GrantFinder Polska</title>
-        <meta name="description" content="Polityka prywatności GrantFinder Polska: zakres i cele przetwarzania, podstawa prawna, prawa użytkownika oraz bezpieczeństwo danych." />
+        <title>Polityka prywatności – Grantly Polska</title>
+        <meta name="description" content="Polityka prywatności Grantly Polska: zakres i cele przetwarzania, podstawa prawna, prawa użytkownika oraz bezpieczeństwo danych." />
         <link rel="canonical" href={canonical} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
@@ -35,7 +35,7 @@ const Privacy = () => {
       <main>
         <section className="container mx-auto px-4 py-12">
           <header className="mb-8">
-            <h1 className="text-3xl font-bold">Polityka prywatności „GrantFinder Polska”</h1>
+            <h1 className="text-3xl font-bold">Polityka prywatności „Grantly Polska”</h1>
             <p className="mt-2 text-muted-foreground">Ostatnia aktualizacja: {new Date().toLocaleDateString("pl-PL")}</p>
           </header>
 
