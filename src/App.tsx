@@ -13,6 +13,8 @@ import Eligibility from "./pages/Eligibility";
 import Chatbot from "./pages/Chatbot";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +34,8 @@ const App = () => (
             <Route path="/chatbot" element={<Chatbot />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/regulamin" element={<Terms />} />
+            <Route path="/polityka-prywatnosci" element={<Privacy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

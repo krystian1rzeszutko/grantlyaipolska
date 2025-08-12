@@ -8,6 +8,8 @@ const Footer = () => {
             <a href="#pricing" className="hover:text-foreground">Cennik</a>
             <a href="/admin" className="hover:text-foreground">Panel Admina</a>
             <a href="/dashboard" className="hover:text-foreground">Panel użytkownika</a>
+            <a href="/regulamin" className="hover:text-foreground">Regulamin</a>
+            <a href="/polityka-prywatnosci" className="hover:text-foreground">Polityka prywatności</a>
           </nav>
         </div>
       </div>
