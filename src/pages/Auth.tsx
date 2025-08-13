@@ -5,24 +5,43 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "@/hooks/use-toast";
+import { useAuth } from "@/components/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
   const [loading, setLoading] = useState(false);
   const [nip, setNip] = useState("");
+  const { signIn, signUp, user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+    }
+  }, [user, navigate]);
 
   async function handleSignUp(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = String(form.get("email"));
     const password = String(form.get("password"));
+    const displayName = String(form.get("displayName"));
+    
     try {
       setLoading(true);
-      // Demo-only auth (localStorage). TODO: Integracja z Supabase auth.
-      localStorage.setItem("gf_user", JSON.stringify({ email }));
-      toast({ title: "Konto utworzone" });
-      window.location.href = "/dashboard";
+      const { error } = await signUp(email, password, displayName);
+      if (error) {
+        toast({ 
+          title: "Błąd rejestracji", 
+          description: error.message === "User already registered" 
+            ? "Użytkownik z tym adresem email już istnieje" 
+            : error.message 
+        });
+      } else {
+        toast({ title: "Konto utworzone", description: "Sprawdź email w celu aktywacji konta" });
+      }
     } catch (err: any) {
       toast({ title: "Błąd", description: err.message });
     } finally {
@@ -35,12 +54,21 @@ const Auth = () => {
     const form = new FormData(e.currentTarget);
     const email = String(form.get("email"));
     const password = String(form.get("password"));
+    
     try {
       setLoading(true);
-      // Demo-only auth (localStorage). TODO: Integracja z Supabase auth.
-      localStorage.setItem("gf_user", JSON.stringify({ email }));
-      toast({ title: "Zalogowano" });
-      window.location.href = "/dashboard";
+      const { error } = await signIn(email, password);
+      if (error) {
+        toast({ 
+          title: "Błąd logowania", 
+          description: error.message === "Invalid login credentials" 
+            ? "Nieprawidłowy email lub hasło" 
+            : error.message 
+        });
+      } else {
+        toast({ title: "Zalogowano" });
+        navigate("/dashboard");
+      }
     } catch (err: any) {
       toast({ title: "Błąd", description: err.message });
     } finally {
@@ -95,12 +123,16 @@ const Auth = () => {
           <TabsContent value="signup">
             <form onSubmit={handleSignUp} className="space-y-4">
               <div>
+                <Label htmlFor="displayName">Nazwa (opcjonalnie)</Label>
+                <Input id="displayName" name="displayName" type="text" placeholder="Twoja nazwa" />
+              </div>
+              <div>
                 <Label htmlFor="email2">E-mail</Label>
                 <Input id="email2" name="email" type="email" required />
               </div>
               <div>
-                <Label htmlFor="password2">Hasło</Label>
-                <Input id="password2" name="password" type="password" required />
+                <Label htmlFor="password2">Hasło (min. 6 znaków)</Label>
+                <Input id="password2" name="password" type="password" required minLength={6} />
               </div>
               <Button type="submit" disabled={loading} className="w-full" variant="hero">Zarejestruj</Button>
             </form>
