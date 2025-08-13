@@ -41,7 +41,7 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <img src={hero} alt="Grantly Polska – hero" className="w-full rounded-lg shadow-xl" loading="lazy" />
+              <img src="/lovable-uploads/82d6fc29-a672-41df-9f7f-8ac9e51678ef.png" alt="Grantly Polska – najlepsze dofinansowania" className="w-full rounded-lg shadow-xl" loading="lazy" />
             </div>
           </div>
         </section>

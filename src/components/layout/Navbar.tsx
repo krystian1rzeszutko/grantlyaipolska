@@ -7,7 +7,11 @@ const Navbar = () => {
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <span className="inline-block size-6 rounded-sm bg-primary" aria-hidden />
+          <img 
+            src="/lovable-uploads/45f29a72-31ec-4764-a1ce-c2ab7b6c8e85.png" 
+            alt="Grantly Polska logo" 
+            className="h-6 w-6"
+          />
           <span className="text-base font-semibold tracking-tight">Grantly Polska</span>
         </Link>
         <div className="hidden items-center gap-6 md:flex">
