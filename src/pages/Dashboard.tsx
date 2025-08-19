@@ -17,10 +17,21 @@ const Dashboard = () => {
     if (urlParams.get('success') === 'true') {
       toast({ title: "Płatność zakończona sukcesem!", description: "Twoja subskrypcja została aktywowana." });
       checkSubscription();
+      
+      // Send welcome email
+      const email = urlParams.get('email') || user?.email;
+      if (email) {
+        supabase.functions.invoke('send-pro-welcome', {
+          body: { 
+            email: email,
+            displayName: user?.user_metadata?.display_name || email.split('@')[0]
+          }
+        }).catch(console.error);
+      }
     } else if (urlParams.get('canceled') === 'true') {
       toast({ title: "Płatność anulowana", description: "Możesz spróbować ponownie później." });
     }
-  }, [checkSubscription]);
+  }, [checkSubscription, user]);
 
   const handleUpgrade = async () => {
     try {

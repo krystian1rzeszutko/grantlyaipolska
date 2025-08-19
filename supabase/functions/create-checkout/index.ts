@@ -66,7 +66,7 @@ serve(async (req) => {
         },
       ],
       mode: "subscription",
-      success_url: `${origin}/dashboard?success=true`,
+      success_url: `${origin}/dashboard?success=true&email=${encodeURIComponent(user.email)}`,
       cancel_url: `${origin}/dashboard?canceled=true`,
     });
 

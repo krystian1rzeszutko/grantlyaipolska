@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
+import { useAuth } from "@/components/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Message { role: "user" | "assistant"; content: string }
 
@@ -17,19 +19,42 @@ const Chatbot = () => {
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
 
   async function send() {
+    const { user, subscribed } = useAuth();
+    
+    if (!user) {
+      toast({ title: "Wymagane logowanie", description: "Zaloguj się aby korzystać z AI Doradcy." });
+      return;
+    }
+
     const newCount = count + 1;
     setCount(newCount);
-    if (newCount > 5) {
+    
+    if (!subscribed && newCount > 5) {
       toast({ title: "Limit pytań", description: "Plan Free: 5 pytań. Przejdź na PRO aby zdjąć limit." });
+      return;
     }
+    
     const userMsg: Message = { role: "user", content: input };
     setMessages((m) => [...m, userMsg]);
     setInput("");
-    // TODO: Integracja z OpenAI przez Supabase Edge Function (po dodaniu klucza)
-    setTimeout(() => {
-      const reply: Message = { role: "assistant", content: `Rozumiem: "${userMsg.content}". Wersja demonstracyjna – odpowiedzi AI po konfiguracji.` };
+
+    try {
+      const { data, error } = await supabase.functions.invoke('ai-chatbot', {
+        body: { message: userMsg.content }
+      });
+      
+      if (error) throw error;
+      
+      const reply: Message = { role: "assistant", content: data.response };
       setMessages((m) => [...m, reply]);
-    }, 500);
+    } catch (error) {
+      console.error('Błąd AI chatbota:', error);
+      const errorMsg: Message = { 
+        role: "assistant", 
+        content: "Przepraszam, wystąpił błąd. Spróbuj ponownie." 
+      };
+      setMessages((m) => [...m, errorMsg]);
+    }
   }
 
   return (
