@@ -26,57 +26,45 @@ serve(async (req) => {
     logStep("Email data received", { email, displayName });
 
     const emailResponse = await resend.emails.send({
-      from: "Grantly <noreply@grantly.pl>",
+      from: "Grantly Polska <kontakt@grantlypolska.pl>",
       to: [email],
-      subject: "Witamy w Grantly PRO! 🎉",
-      html: `
-        <div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif;">
-          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center;">
-            <h1 style="margin: 0; font-size: 28px;">Grantly PRO</h1>
-            <p style="margin: 10px 0 0; font-size: 16px; opacity: 0.9;">Witamy w premium doświadczeniu!</p>
-          </div>
-          
-          <div style="padding: 40px 20px; background: white;">
-            <h2 style="color: #333; margin-bottom: 20px;">Cześć ${displayName || 'użytkowniku'}! 👋</h2>
-            
-            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-              Dziękujemy za wybór Grantly PRO! Teraz masz dostęp do wszystkich funkcji premium:
-            </p>
-            
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="color: #333; margin-top: 0;">🚀 Twoje korzyści PRO:</h3>
-              <ul style="color: #666; line-height: 1.8; margin: 10px 0;">
-                <li>✅ <strong>Nielimitowane wyszukiwania</strong> dotacji</li>
-                <li>✅ <strong>Nielimitowane pytania</strong> do AI Doradcy</li>
-                <li>✅ <strong>Zaawansowane filtry</strong> wyszukiwania</li>
-                <li>✅ <strong>Priorytetowe wsparcie</strong></li>
-                <li>✅ <strong>Powiadomienia o nowych dotacjach</strong></li>
-              </ul>
-            </div>
-            
-            <div style="text-align: center; margin: 30px 0;">
-              <a href="https://grantly.pl/dashboard" 
-                 style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                        color: white; 
-                        text-decoration: none; 
-                        padding: 15px 30px; 
-                        border-radius: 25px; 
-                        font-weight: bold; 
-                        display: inline-block;">
-                Przejdź do panelu PRO
-              </a>
-            </div>
-            
-            <p style="color: #888; font-size: 14px; text-align: center; margin-top: 30px;">
-              Masz pytania? Odpowiedz na tego maila – jesteśmy tutaj, aby pomóc!
-            </p>
-          </div>
-          
-          <div style="background: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 12px;">
-            <p style="margin: 0;">© 2025 Grantly Polska. Wszystkie prawa zastrzeżone.</p>
-          </div>
-        </div>
-      `,
+      subject: "Dziękujemy za zakup PRO",
+      html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fafafa;">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="https://grantlypolska.pl/logo.png" alt="Grantly Polska" style="max-height: 60px;" />
+  </div>
+  
+  <h2 style="color: #2c3e50;">Dziękujemy za zakup planu PRO 🎉</h2>
+  
+  <p>Witaj,</p>
+  <p>Twoja subskrypcja <strong>Grantly Polska – PRO</strong> została aktywowana.</p>
+  
+  <p>Dzięki planowi PRO masz teraz dostęp do:</p>
+  <ul>
+    <li>🔍 <strong>Nielimitowanych wyszukiwań dotacji</strong></li>
+    <li>🤖 <strong>Chatbota AI bez ograniczeń pytań</strong></li>
+    <li>📊 <strong>Pełnych ocen kwalifikowalności</strong></li>
+    <li>📩 <strong>Powiadomień o nowych naborach</strong></li>
+  </ul>
+  
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="https://grantlypolska.pl/auth" 
+       style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+       Zaloguj się do swojego konta
+    </a>
+  </div>
+  
+  <p>W razie pytań napisz do nas: 
+     <a href="mailto:kontakt@grantlypolska.pl">kontakt@grantlypolska.pl</a>.
+  </p>
+  
+  <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;" />
+  
+  <p style="font-size: 12px; color: #777; text-align: center;">
+    Grantly Polska – Twój przewodnik po dotacjach dla firm.<br/>
+    © 2025 Grantly Polska. Wszystkie prawa zastrzeżone.
+  </p>
+</div>`,
     });
 
     logStep("Email sent successfully", { messageId: emailResponse.data?.id });
